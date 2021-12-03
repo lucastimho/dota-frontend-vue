@@ -5,6 +5,11 @@
     <p>Account ID: {{ player.profile.account_id }}</p>
     <p>Rank: {{ player.leaderboard_rank }}</p>
     <p>MMR: {{ player.mmr_estimate.estimate }}</p>
+    <div>
+      <router-link to="/followings">Follow this player</router-link>
+      |
+    </div>
+    <router-link to="/players">Back to all players</router-link>
   </div>
 </template>
 

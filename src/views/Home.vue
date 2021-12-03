@@ -9,8 +9,12 @@
 export default {
   data: function () {
     return {
-      message: "Welcome to Vue.js",
+      message: "Welcome to the Dota 2 Database",
+      games: {},
     };
+  },
+  created: function () {
+    // this.livesGame();
   },
 };
 </script>
