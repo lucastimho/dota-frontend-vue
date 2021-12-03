@@ -3,6 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link>
       |
+      <router-link to="/players">Pro Players</router-link>
+      |
       <router-link to="/about">About</router-link>
       |
       <router-link to="/signup">Sign Up</router-link>
@@ -35,5 +37,8 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+body {
+  background-image: url("./assets/double-bubble-dark.png");
 }
 </style>
