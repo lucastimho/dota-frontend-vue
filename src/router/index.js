@@ -4,7 +4,8 @@ import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
 import Signup from "../views/Signup.vue";
-import Players from "../views/PlayersIndex.vue";
+import PlayersIndex from "../views/PlayersIndex.vue";
+import PlayersShow from "../views/PlayersShow.vue";
 
 Vue.use(VueRouter);
 
@@ -39,8 +40,13 @@ const routes = [
   },
   {
     path: "/players",
-    name: "Players",
-    component: Players,
+    name: "PlayersIndex",
+    component: PlayersIndex,
+  },
+  {
+    path: "/players/:account_id",
+    name: "PlayersShow",
+    component: PlayersShow,
   },
 ];
 

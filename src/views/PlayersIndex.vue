@@ -1,5 +1,5 @@
 <template>
-  <div class="PlayersIndex">
+  <div class="players-index">
     <div>
       Search by Name:
       <input type="text" v-model="nameFilter" list="names" />
@@ -15,10 +15,10 @@
             <span>
               <div class="card-body">
                 <h5 class="card-title">{{ player.name }}</h5>
-                <img :src="player.avatarfull" alt="player.name" />
+                <img :src="player.avatarfull" :alt="player.name" />
                 <p class="card-text">{{ player.personaname }}</p>
                 <p class="card-text">{{ player.team_name }}</p>
-                <router-link v-bind:to="`/players/${player.id}`" class="btn btn-primary">Read More</router-link>
+                <router-link v-bind:to="`/players/${player.account_id}`" class="btn btn-primary">Read More</router-link>
               </div>
             </span>
           </div>
@@ -28,13 +28,8 @@
   </div>
 </template>
 
-<style>
-span:hover {
-  color: lightskyblue;
-  background-color: white;
-  transition: background-color 1s ease;
-}
-</style>
+<style></style>
+
 <script>
 import axios from "axios";
 import Vue2Filters from "vue2-filters";
@@ -51,7 +46,7 @@ export default {
   },
   methods: {
     indexPlayers: function () {
-      axios.get("http://localhost:3000/players").then((response) => {
+      axios.get("/players").then((response) => {
         this.players = response.data;
         console.log("All Players", this.players);
       });
