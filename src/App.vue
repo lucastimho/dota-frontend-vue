@@ -47,7 +47,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                More
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" v-if="isLoggedIn()" href="/following">Follow List</a></li>

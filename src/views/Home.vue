@@ -2,7 +2,7 @@
   <div class="home">
     <img alt="Dota logo" src="../assets/dota_stock_image.jpeg" />
     <h1>{{ message }}</h1>
-    <div v-for="game in games" :key="game.match_id.parseInt()">{{ game.players }}</div>
+    <div v-for="game in games" :key="game.match_id">{{ game.players }}</div>
     <!-- <div class="row">
       <div class="column"></div>
       <div class="column"></div>
