@@ -11,6 +11,13 @@
     <div v-if="isLoggedIn()">
       <button v-on:click="followPlayer()">Follow Player</button>
     </div>
+    <dialog id="follow-confirmation">
+      <form method="dialog">
+        <label>Are you sure you would like to add this player</label>
+        <button v-on:click="createFollowing()">Yes</button>
+        <button>No</button>
+      </form>
+    </dialog>
     <router-link to="/players">Back to all players</router-link>
   </div>
 </template>
@@ -30,11 +37,16 @@ export default {
       player: {},
       errors: [],
       status: "",
+      following: {},
+      user: {},
     };
   },
   created: function () {
     axios.get("/players/" + this.$route.params.account_id).then((response) => {
       this.player = response.data;
+    });
+    axios.get("/user").then((response) => {
+      this.user.user_id = response.data.id;
     });
   },
   methods: {
@@ -49,11 +61,22 @@ export default {
       return localStorage.getItem("user_id");
     },
     followPlayer: function () {
-      console.log(this.player.profile.account_id);
       axios
-        .post("/players", this.player.profile.account_id)
+        .post("/players", this.player)
         .then((response) => {
           console.log(response);
+        })
+        .catch((error) => {
+          this.status = error.response.status;
+          console.log(error.response);
+        });
+      document.querySelector("#follow-confirmation").showModal();
+    },
+    createFollowing: function () {
+      axios
+        .post("/followings/" + this.$route.params.account_id, this.user)
+        .then(() => {
+          this.$router.push("/players");
         })
         .catch((error) => {
           this.status = error.response.status;
