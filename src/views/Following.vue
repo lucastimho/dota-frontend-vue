@@ -1,11 +1,15 @@
 <template>
-  <div class="players-show">
-    <div v-for="following in followingList" :key="following.id">
-      <h3>Name: {{ following }}</h3>
-      <!-- <img :src="player.profile.avatarfull" :alt="player.profile.name" />
-      <p>Account ID: {{ player.profile.account_id }}</p>
-      <p>Rank: {{ player.leaderboard_rank }}</p>
-      <p>MMR: {{ player.mmr_estimate.estimate }}</p> -->
+  <div class="follows-show">
+    <ul>
+      <li v-for="error in errors" :key="error">{{ error }}</li>
+    </ul>
+    <div v-for="follow in followingList" :key="follow.id">
+      <h3>Name: {{ follow.name }}</h3>
+      <img :src="follow.avatar_full" :alt="follow.name" />
+      <p>Account ID: {{ follow.account_id }}</p>
+      <p>Team: {{ follow.team }}</p>
+      <p>MMR: {{ follow.mmr }}</p>
+      <button></button>
     </div>
     <!-- <div>
       <router-link to="/followings">Follow this player</router-link>
@@ -24,12 +28,24 @@ export default {
   data: function () {
     return {
       followingList: {},
+      errors: [],
     };
   },
   created: function () {
     axios.get("/followings").then((response) => {
       this.followingList = response.data;
+      console.log(response.data);
     });
+  },
+  methods: {
+    updatePlayer: function (follow) {
+      axios
+        .patch(`/players/${follow.id}`, this.follow)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => console.log(error.response));
+    },
   },
 };
 </script>
