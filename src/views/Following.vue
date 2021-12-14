@@ -9,7 +9,8 @@
       <p>Account ID: {{ follow.account_id }}</p>
       <p>Team: {{ follow.team }}</p>
       <p>MMR: {{ follow.mmr }}</p>
-      <button></button>
+      <button v-on:click="updatePlayer(follow)">Update</button>
+      <button v-on:click="deletePlayer(follow)">Delete</button>
     </div>
     <!-- <div>
       <router-link to="/followings">Follow this player</router-link>
@@ -40,11 +41,18 @@ export default {
   methods: {
     updatePlayer: function (follow) {
       axios
-        .patch(`/players/${follow.id}`, this.follow)
+        .patch(`/players/${follow.id}`, follow)
         .then((response) => {
           console.log(response.data);
         })
         .catch((error) => console.log(error.response));
+      this.$router.push("/following");
+    },
+    deletePlayer: function (follow) {
+      axios.delete(`/followings/${follow.id}`).then((response) => {
+        console.log(response.data);
+      });
+      this.$router.push("/following");
     },
   },
 };

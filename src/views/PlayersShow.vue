@@ -13,7 +13,8 @@
     </div>
     <dialog id="follow-confirmation">
       <form method="dialog">
-        <label>Are you sure you would like to add this player</label>
+        <label>Are you sure you would like to add this player?</label>
+
         <button v-on:click="createFollowing()">Yes</button>
         <button>No</button>
       </form>
@@ -62,9 +63,9 @@ export default {
     },
     followPlayer: function () {
       axios
-        .post("/players", this.player)
+        .post("/players/" + this.player.profile.account_id)
         .then((response) => {
-          console.log(response);
+          console.log(response.data);
         })
         .catch((error) => {
           this.status = error.response.status;
