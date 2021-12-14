@@ -3,7 +3,12 @@
     <img alt="Dota logo" src="../assets/dota_stock_image.jpeg" />
     <h1>{{ message }}</h1>
     <div v-if="!isLoggedIn()">
-      <div v-for="game in liveGamesNow" :key="game.match_id">{{ game.players }}</div>
+      <div v-for="game in liveGamesNow" :key="game.match_id">
+        -----------------------------------------------
+
+        <p>Average MMR: {{ game.average_mmr }}</p>
+        <p>Game Time: {{ game.game_time }}</p>
+      </div>
     </div>
     <div v-if="isLoggedIn()">
       <div v-for="game in recentGamesPlayed" :key="game.match_id">

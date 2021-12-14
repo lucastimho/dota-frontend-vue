@@ -1,18 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/players">Pro Players</router-link>
-      |
-      <router-link to="/about">About</router-link>
-      |
-      <router-link to="/signup">Sign Up</router-link>
-      |
-      <router-link to="/login">Login</router-link>
-      |
-      <router-link to="/logout">Logout</router-link>
-    </div> -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">Home</a>
@@ -51,6 +38,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" v-if="isLoggedIn()" href="/following">Follow List</a></li>
+                <li><a class="dropdown-item" v-if="isLoggedIn()" href="/profile">Profile Settings</a></li>
                 <li><a class="dropdown-item" href="/about">About</a></li>
                 <div v-if="!isLoggedIn()">
                   <li><hr class="dropdown-divider" /></li>
@@ -62,10 +50,10 @@
               <a class="nav-link disabled">Welcome Guest</a>
             </li>
           </ul>
-          <form class="d-flex">
+          <!-- <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> -->
         </div>
       </div>
     </nav>

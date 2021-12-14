@@ -7,6 +7,7 @@ import Signup from "../views/Signup.vue";
 import PlayersIndex from "../views/PlayersIndex.vue";
 import PlayersShow from "../views/PlayersShow.vue";
 import Following from "../views/Following.vue";
+import Settings from "../views/Profile.vue";
 
 Vue.use(VueRouter);
 
@@ -53,6 +54,11 @@ const routes = [
     path: "/following",
     name: "Following",
     component: Following,
+  },
+  {
+    path: "/profile",
+    name: "Settings",
+    component: Settings,
   },
 ];
 
