@@ -1,9 +1,14 @@
 <template>
   <div>
     <h1>Profile page</h1>
-    Account ID:
-    <input v-model="user.account_id" />
-    <button v-on:click="updateUser()">Update</button>
+    <form v-on:submit.prevent="updateUser(user)">
+      <ul>
+        <li v-for="error in errors" :key="error">{{ error }}</li>
+      </ul>
+      <h3>Account ID:</h3>
+      <input v-model="user.account_id" />
+      <input type="submit" value="Submit" />
+    </form>
   </div>
 </template>
 
@@ -13,6 +18,7 @@ export default {
   data: function () {
     return {
       user: {},
+      errors: [],
     };
   },
   created: function () {
@@ -21,15 +27,14 @@ export default {
     });
   },
   methods: {
-    updateUser: function () {
+    updateUser: function (user) {
       axios
-        .patch(`/users/${this.user.id}`, this.user.account_id)
+        .patch("/users/" + user.id, user)
         .then((response) => {
           console.log(response.data);
           this.$router.push("/");
         })
         .catch((error) => {
-          this.status = error.response.status;
           console.log(error.response);
         });
     },
