@@ -76,8 +76,8 @@ export default {
     createFollowing: function () {
       axios
         .post("/followings/" + this.$route.params.account_id, this.user)
-        .then(() => {
-          this.$router.push("/players");
+        .then((response) => {
+          console.log(response.data);
         })
         .catch((error) => {
           this.status = error.response.status;

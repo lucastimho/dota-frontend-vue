@@ -12,11 +12,6 @@
       <button v-on:click="updatePlayer(follow)">Update</button>
       <button v-on:click="deletePlayer(follow)">Delete</button>
     </div>
-    <!-- <div>
-      <router-link to="/followings">Follow this player</router-link>
-      |
-    </div>
-    <router-link to="/players">Back to all players</router-link> -->
   </div>
 </template>
 
@@ -44,15 +39,15 @@ export default {
         .patch(`/players/${follow.id}`, follow)
         .then((response) => {
           console.log(response.data);
+          this.$router.push("/following");
         })
         .catch((error) => console.log(error.response));
-      this.$router.push("/following");
     },
     deletePlayer: function (follow) {
       axios.delete(`/followings/${follow.id}`).then((response) => {
         console.log(response.data);
+        this.$router.push("/following");
       });
-      this.$router.push("/following");
     },
   },
 };
