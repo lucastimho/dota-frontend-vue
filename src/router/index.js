@@ -8,6 +8,7 @@ import PlayersIndex from "../views/PlayersIndex.vue";
 import PlayersShow from "../views/PlayersShow.vue";
 import Following from "../views/Following.vue";
 import Settings from "../views/Profile.vue";
+import Games from "../views/Games.vue";
 
 Vue.use(VueRouter);
 
@@ -59,6 +60,11 @@ const routes = [
     path: "/profile",
     name: "Settings",
     component: Settings,
+  },
+  {
+    path: "/games",
+    name: "Games",
+    component: Games,
   },
 ];
 

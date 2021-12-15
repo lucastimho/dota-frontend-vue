@@ -39,14 +39,14 @@ export default {
         .patch(`/players/${follow.id}`, follow)
         .then((response) => {
           console.log(response.data);
-          this.$router.push("/following");
+          this.$router.go("/following");
         })
         .catch((error) => console.log(error.response));
     },
     deletePlayer: function (follow) {
       axios.delete(`/followings/${follow.id}`).then((response) => {
         console.log(response.data);
-        this.$router.push("/following");
+        this.$router.go("/following");
       });
     },
   },
