@@ -7,13 +7,13 @@
 
         <nav id="navbar" class="navbar">
           <ul>
-            <li><a class="nav-link scrollto active" href="/">Home</a></li>
-            <li><a class="nav-link scrollto" href="/about">About</a></li>
-            <li><a class="nav-link scrollto" href="/games">Games</a></li>
-            <li><a class="nav-link scrollto" href="/players">Pro Players</a></li>
-            <li v-if="!isLoggedIn()"><a class="nav-link scrollto" href="/login">Login</a></li>
-            <li v-if="isLoggedIn()"><a class="nav-link scrollto" href="/following">Following</a></li>
-            <li v-if="isLoggedIn()"><a class="nav-link scrollto" href="/logout">Logout</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/games">Games</a></li>
+            <li><a href="/players">Pro Players</a></li>
+            <li v-if="!isLoggedIn()"><a href="/login">Login</a></li>
+            <li v-if="isLoggedIn()"><a href="/following">Following</a></li>
+            <li v-if="isLoggedIn()"><a href="/logout">Logout</a></li>
             <li v-if="isLoggedIn()"><a href="/profile">Profile</a></li>
             <!-- <li class="dropdown">
               <a href="#">
