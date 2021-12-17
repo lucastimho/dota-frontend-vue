@@ -1,6 +1,6 @@
 <template>
   <div class="players-show">
-    <ul>
+    <!-- <ul>
       <li v-for="error in errors" :key="error">{{ error }}</li>
     </ul>
     <h3>Name: {{ player.profile.name }}</h3>
@@ -15,19 +15,62 @@
       <form method="dialog">
         <label>Are you sure you would like to add this player?</label>
 
-        <button v-on:click="createFollowing()">Yes</button>
+        <button class="btn btn-primary" v-on:click="createFollowing()">Yes</button>
         <button>No</button>
       </form>
     </dialog>
-    <router-link to="/players">Back to all players</router-link>
+    <router-link to="/players">Back to all players</router-link> -->
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">{{ player.profile.name }}</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">
+              Welcome to {{ player.profile.name }}'s player entry. For more information about this player, their dota
+              account number is {{ player.profile.account_id }}.
+            </p>
+          </div>
+        </div>
+
+        <ul>
+          <li v-for="error in errors" :key="error">{{ error }}</li>
+        </ul>
+
+        <div class="row portfolio-container">
+          <div class="col-lg-4 col-md-1 portfolio-item filter-web">
+            <img :src="player.profile.avatarfull" class="img-fluid" alt="" />
+            <div class="portfolio-info">
+              <h4>{{ player.profile.name }}</h4>
+              <p>Rank: {{ player.leaderboard_rank }}</p>
+              <p>MMR: {{ player.mmr_estimate.estimate }}</p>
+              <div v-if="isLoggedIn()">
+                <a data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Follow">
+                  <i class="bi bi-plus" v-on:click="followPlayer()"></i>
+                </a>
+              </div>
+              <dialog id="follow-confirmation">
+                <form method="dialog">
+                  <label>Are you sure you would like to add this player?</label>
+
+                  <button v-on:click="createFollowing()">Yes</button>
+                  <button>No</button>
+                </form>
+              </dialog>
+              <a href="/players" class="details-link" title="Back to All Pro players">
+                <i class="bi bi-link"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Portfolio Section -->
   </div>
 </template>
 
-<style>
-img {
-  width: 250px;
-}
-</style>
+<style></style>
 
 <script>
 import axios from "axios";
@@ -57,9 +100,6 @@ export default {
       } else {
         return false;
       }
-    },
-    getUserId: function () {
-      return localStorage.getItem("user_id");
     },
     followPlayer: function () {
       axios
