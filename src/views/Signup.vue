@@ -49,9 +49,9 @@
                 <div class="form-group mt-3">
                   <input
                     type="text"
-                    v-model="newUserParams.name"
+                    v-model="newUserParams.account_id"
                     class="form-control"
-                    placeholder="Your Name"
+                    placeholder="Your Account ID"
                     required
                   />
                   <small>{{ 20 - newUserParams.name.length }} characters remaining</small>
