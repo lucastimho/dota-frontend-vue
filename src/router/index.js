@@ -9,6 +9,7 @@ import PlayersShow from "../views/PlayersShow.vue";
 import Following from "../views/Following.vue";
 import Settings from "../views/Profile.vue";
 import Games from "../views/Games.vue";
+import Contact from "../views/Contact.vue";
 
 Vue.use(VueRouter);
 
@@ -65,6 +66,11 @@ const routes = [
     path: "/games",
     name: "Games",
     component: Games,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact,
   },
 ];
 

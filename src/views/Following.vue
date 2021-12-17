@@ -1,17 +1,5 @@
 <template>
   <div class="follows-show">
-    <!-- <ul>
-      <li v-for="error in errors" :key="error">{{ error }}</li>
-    </ul>
-    <div v-for="follow in followingList" :key="follow.id">
-      <h3>Name: {{ follow.name }}</h3>
-      <img :src="follow.avatar_full" :alt="follow.name" />
-      <p>Account ID: {{ follow.account_id }}</p>
-      <p>Team: {{ follow.team }}</p>
-      <p>MMR: {{ follow.mmr }}</p>
-      <button v-on:click="updatePlayer(follow)">Update</button>
-      <button v-on:click="deletePlayer(follow)">Delete</button>
-    </div> -->
     <!-- ======= Team Section ======= -->
     <section id="team">
       <div class="container" data-aos="fade-up">
