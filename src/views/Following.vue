@@ -23,12 +23,21 @@
           </div>
         </div>
 
+        <ul>
+          <li v-for="error in errors" :key="error">{{ error }}</li>
+        </ul>
+
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-md-3" v-for="follow in followingList" :key="follow.id">
             <div class="member">
-              <div class="pic"><img src="assets/img/team/team-4.jpg" alt="" /></div>
-              <h4>Amanda Jepson</h4>
-              <span>Accountant</span>
+              <div class="pic"><img :src="follow.avatar_full" :alt="follow.name" /></div>
+              <h4>Name: {{ follow.name }}</h4>
+              <span>Account ID: {{ follow.account_id }}</span>
+              <span>Team: {{ follow.team }}</span>
+              <span>MMR: {{ follow.mmr }}</span>
+              <button class="btn btn-primary" v-on:click="updatePlayer(follow)">Update</button>
+              |
+              <button class="btn btn-primary" v-on:click="deletePlayer(follow)">Delete</button>
             </div>
           </div>
         </div>
