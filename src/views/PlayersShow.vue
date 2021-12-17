@@ -88,6 +88,7 @@ export default {
         })
         .catch((error) => {
           this.status = error.response.status;
+          this.errors = error.response;
           console.log(error.response);
         });
       document.querySelector("#follow-confirmation").showModal();
@@ -99,6 +100,7 @@ export default {
           console.log(response.data);
         })
         .catch((error) => {
+          this.errors = error.response;
           console.log(error.response);
         });
     },
