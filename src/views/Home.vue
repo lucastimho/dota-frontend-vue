@@ -10,12 +10,12 @@
             <span class="typed" data-typed-items="live games, pro players, recent games, your favorite players"></span>
           </h2>
           <div class="actions" v-if="!isLoggedIn()">
-            <a href="#about" class="btn-get-started">Sign Up</a>
-            <a href="#services" class="btn-services">Live Games</a>
+            <a href="/signup" class="btn-get-started">Sign Up</a>
+            <a href="/games" class="btn-services">Live Games</a>
           </div>
           <div class="actions" v-if="isLoggedIn()">
-            <a href="#about" class="btn-get-started">Following</a>
-            <a href="#services" class="btn-services">Recent Games</a>
+            <a href="/following" class="btn-get-started">Following</a>
+            <a href="/games" class="btn-services">Recent Games</a>
           </div>
         </div>
       </div>

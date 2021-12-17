@@ -54,7 +54,6 @@
                     placeholder="Your Account ID"
                     required
                   />
-                  <small>{{ 20 - newUserParams.name.length }} characters remaining</small>
                 </div>
                 <div class="form-group mt-3">
                   <input
