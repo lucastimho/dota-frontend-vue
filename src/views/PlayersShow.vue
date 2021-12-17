@@ -1,25 +1,5 @@
 <template>
   <div class="players-show">
-    <!-- <ul>
-      <li v-for="error in errors" :key="error">{{ error }}</li>
-    </ul>
-    <h3>Name: {{ player.profile.name }}</h3>
-    <img :src="player.profile.avatarfull" :alt="player.profile.name" />
-    <p>Account ID: {{ player.profile.account_id }}</p>
-    <p>Rank: {{ player.leaderboard_rank }}</p>
-    <p>MMR: {{ player.mmr_estimate.estimate }}</p>
-    <div v-if="isLoggedIn()">
-      <button v-on:click="followPlayer()">Follow Player</button>
-    </div>
-    <dialog id="follow-confirmation">
-      <form method="dialog">
-        <label>Are you sure you would like to add this player?</label>
-
-        <button class="btn btn-primary" v-on:click="createFollowing()">Yes</button>
-        <button>No</button>
-      </form>
-    </dialog>
-    <router-link to="/players">Back to all players</router-link> -->
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio">
       <div class="container" data-aos="fade-up">
@@ -80,7 +60,6 @@ export default {
     return {
       player: {},
       errors: [],
-      status: "",
       following: {},
       user: {},
     };
@@ -120,7 +99,6 @@ export default {
           console.log(response.data);
         })
         .catch((error) => {
-          this.status = error.response.status;
           console.log(error.response);
         });
     },

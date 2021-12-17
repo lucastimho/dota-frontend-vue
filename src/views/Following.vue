@@ -1,6 +1,6 @@
 <template>
   <div class="follows-show">
-    <ul>
+    <!-- <ul>
       <li v-for="error in errors" :key="error">{{ error }}</li>
     </ul>
     <div v-for="follow in followingList" :key="follow.id">
@@ -11,7 +11,30 @@
       <p>MMR: {{ follow.mmr }}</p>
       <button v-on:click="updatePlayer(follow)">Update</button>
       <button v-on:click="deletePlayer(follow)">Delete</button>
-    </div>
+    </div> -->
+    <!-- ======= Team Section ======= -->
+    <section id="team">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="section-title">Players You Follow</h3>
+            <div class="section-title-divider"></div>
+            <p class="section-description">Here is your list of players that you follow.</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3">
+            <div class="member">
+              <div class="pic"><img src="assets/img/team/team-4.jpg" alt="" /></div>
+              <h4>Amanda Jepson</h4>
+              <span>Accountant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Team Section -->
   </div>
 </template>
 

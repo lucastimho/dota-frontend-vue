@@ -60,15 +60,12 @@
         </div> -->
 
         <div class="row">
-          <div class="col-sm-6">
-            <div
-              class="card"
-              v-for="player in orderBy(
-                filterBy(players, nameFilter, 'name', 'team_name', 'country_code'),
-                sortAttribute
-              )"
-              :key="player.account_id"
-            >
+          <div
+            class="col-sm-6"
+            v-for="player in orderBy(filterBy(players, nameFilter, 'name', 'team_name', 'country_code'), sortAttribute)"
+            :key="player.account_id"
+          >
+            <div class="card">
               <span>
                 <div class="card-body">
                   <h5 class="card-title">{{ player.name }}</h5>
@@ -89,7 +86,13 @@
   </div>
 </template>
 
-<style></style>
+<style>
+span:hover {
+  color: white;
+  background-color: lightskyblue;
+  transition: background-color 1s ease;
+}
+</style>
 
 <script>
 import axios from "axios";

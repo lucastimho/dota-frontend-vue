@@ -12,8 +12,8 @@
             </div>
           </div>
 
-          <div class="row" data-aos="fade-up" data-aos-delay="200" v-for="game in liveGamesNow" :key="game.match_id">
-            <div class="col-lg-4 col-md-6 service-item">
+          <div class="row" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 service-item" v-for="game in liveGamesNow" :key="game.match_id">
               <div class="service-icon"><i class="bi bi-bar-chart"></i></div>
               <h4 class="service-title">
                 <a href="">Avg. MMR: {{ game.average_mmr }}</a>
@@ -37,14 +37,8 @@
             </div>
           </div>
 
-          <div
-            class="row"
-            data-aos="fade-up"
-            data-aos-delay="200"
-            v-for="game in recentGamesPlayed"
-            :key="game.match_id"
-          >
-            <div class="col-lg-4 col-md-6 service-item">
+          <div class="row" data-aos="fade-up" data-aos-delay="200">
+            <div class="col-lg-4 col-md-6 service-item" v-for="game in recentGamesPlayed" :key="game.match_id">
               <div class="service-icon"><i class="bi bi-bar-chart"></i></div>
               <h4 class="service-title">
                 <a href="">Radiant Victory: {{ game.radiant_win }}</a>
