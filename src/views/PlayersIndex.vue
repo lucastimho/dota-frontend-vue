@@ -1,30 +1,5 @@
 <template>
   <div class="players-index">
-    <!-- <div>
-      Search by Name:
-      <input type="text" v-model="nameFilter" list="names" />
-      <datalist id="names">
-        <option v-for="player in players" :key="player.account_id">{{ player.name }}</option>
-      </datalist>
-    </div>
-    <h1>List of All Players</h1>
-    <div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="card" v-for="player in orderBy(filterBy(players, nameFilter, 'name'))" :key="player.account_id">
-            <span>
-              <div class="card-body">
-                <h5 class="card-title">{{ player.name }}</h5>
-                <img :src="player.avatarfull" :alt="player.name" />
-                <p class="card-text">{{ player.personaname }}</p>
-                <p class="card-text">{{ player.team_name }}</p>
-                <router-link v-bind:to="`/players/${player.account_id}`" class="btn btn-primary">Read More</router-link>
-              </div>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <!-- ======= Portfolio Section ======= -->
     <section id="portfolio">
       <div class="container" data-aos="fade-up">
@@ -54,15 +29,14 @@
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li><button class="btn btn-primary" v-on:click="setSortAttribute('name')">Name</button></li>
+              <li><button class="btn btn-primary" v-on:click="setSortAttribute('team_name')">Team</button></li>
+              <li><button class="btn btn-primary" v-on:click="setSortAttribute('country_code')">Country</button></li>
             </ul>
           </div>
         </div>
 
-        <div class="portfolio-container">
+        <!-- <div class="portfolio-container">
           <div
             class="col-lg-4 col-md-6 portfolio-item"
             v-for="player in orderBy(filterBy(players, nameFilter, 'name'))"
@@ -83,6 +57,31 @@
               <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
             </div>
           </div>
+        </div> -->
+
+        <div class="row">
+          <div class="col-sm-6">
+            <div
+              class="card"
+              v-for="player in orderBy(
+                filterBy(players, nameFilter, 'name', 'team_name', 'country_code'),
+                sortAttribute
+              )"
+              :key="player.account_id"
+            >
+              <span>
+                <div class="card-body">
+                  <h5 class="card-title">{{ player.name }}</h5>
+                  <img :src="player.avatarfull" :alt="player.name" />
+                  <p class="card-text">{{ player.personaname }}</p>
+                  <p class="card-text">{{ player.team_name }}</p>
+                  <router-link v-bind:to="`/players/${player.account_id}`" class="btn btn-primary">
+                    Read More
+                  </router-link>
+                </div>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -101,6 +100,7 @@ export default {
     return {
       players: [],
       nameFilter: "",
+      sortAttribute: "",
     };
   },
   created: function () {
@@ -112,6 +112,9 @@ export default {
         this.players = response.data;
         console.log("All Players", this.players);
       });
+    },
+    setSortAttribute: function (inputAttribute) {
+      this.sortAttribute = inputAttribute;
     },
   },
 };
