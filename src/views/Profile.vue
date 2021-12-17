@@ -37,14 +37,14 @@
 
           <div class="col-lg-5 col-md-8">
             <div class="form">
-              <ul>
-                <li v-for="error in errors" :key="error">{{ error }}</li>
-              </ul>
-              <form v-on:submit.prevent="updateUser(user)">
+              <form v-on:submit.prevent="updateUser(user)" role="form" class="php-email-form">
+                <ul>
+                  <li v-for="error in errors" :key="error">{{ error }}</li>
+                </ul>
                 <div class="form-group">
                   <input type="text" class="form-control" :placeholder="user.account_id" required />
                 </div>
-                <button class="btn btn-primary" type="submit" value="Submit">Update ID</button>
+                <div class="text-center"><button type="submit" value="Submit">Update ID</button></div>
               </form>
             </div>
           </div>
