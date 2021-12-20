@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- ======= Contact Section ======= -->
     <section id="contact">
       <div class="container" data-aos="fade-up">
         <div class="row">
@@ -51,7 +50,6 @@
         </div>
       </div>
     </section>
-    <!-- End Contact Section -->
   </div>
 </template>
 

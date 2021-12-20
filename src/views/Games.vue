@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <div v-if="!isLoggedIn()">
-      <!-- ======= Services Section ======= -->
       <section id="services">
         <div class="container">
           <div class="row" data-aos="fade-up">
@@ -23,10 +22,8 @@
           </div>
         </div>
       </section>
-      <!-- End Services Section -->
     </div>
     <div v-if="isLoggedIn()">
-      <!-- ======= Services Section ======= -->
       <section id="services">
         <div class="container">
           <div class="row" data-aos="fade-up">
@@ -58,7 +55,6 @@
           </div>
         </div>
       </section>
-      <!-- End Services Section -->
     </div>
   </div>
 </template>

@@ -1,6 +1,5 @@
 <template>
   <div class="follows-show">
-    <!-- ======= Team Section ======= -->
     <section id="team">
       <div class="container" data-aos="fade-up">
         <div class="row">
@@ -31,7 +30,6 @@
         </div>
       </div>
     </section>
-    <!-- End Team Section -->
   </div>
 </template>
 

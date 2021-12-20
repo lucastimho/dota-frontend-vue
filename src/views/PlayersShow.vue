@@ -1,6 +1,5 @@
 <template>
   <div class="players-show">
-    <!-- ======= Portfolio Section ======= -->
     <section id="portfolio">
       <div class="container" data-aos="fade-up">
         <div class="row">
@@ -46,7 +45,6 @@
         </div>
       </div>
     </section>
-    <!-- End Portfolio Section -->
   </div>
 </template>
 

@@ -1,5 +1,4 @@
 <template>
-  <!-- ======= Hero Section ======= -->
   <div>
     <section id="hero">
       <div class="hero-container">
@@ -20,7 +19,6 @@
         </div>
       </div>
     </section>
-    <!-- End Hero -->
   </div>
 </template>
 

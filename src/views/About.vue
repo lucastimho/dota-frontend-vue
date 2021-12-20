@@ -1,5 +1,4 @@
 <template>
-  <!-- ======= About Section ======= -->
   <div>
     <section id="about">
       <div class="container" data-aos="fade-up">
@@ -31,6 +30,5 @@
         </div>
       </div>
     </section>
-    <!-- End About Section -->
   </div>
 </template>

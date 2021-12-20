@@ -1,6 +1,5 @@
 <template>
   <div class="players-index">
-    <!-- ======= Portfolio Section ======= -->
     <section id="portfolio">
       <div class="container" data-aos="fade-up">
         <div class="row">
@@ -36,29 +35,6 @@
           </div>
         </div>
 
-        <!-- <div class="portfolio-container">
-          <div
-            class="col-lg-4 col-md-6 portfolio-item"
-            v-for="player in orderBy(filterBy(players, nameFilter, 'name'))"
-            :key="player.account_id"
-          >
-            <img :src="player.avatarfull" class="img-fluid" alt="" />
-            <div class="col-lg-4 col-md-6 portfolio-info">
-              <h4>{{ player.name }}</h4>
-              <p>{{ player.team_name }}</p>
-              <a
-                href="assets/img/portfolio/portfolio-2.jpg"
-                data-gallery="portfolioGallery"
-                class="portfolio-lightbox preview-link"
-                title="Web 3"
-              >
-                <i class="bi bi-plus"></i>
-              </a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bi bi-link"></i></a>
-            </div>
-          </div>
-        </div> -->
-
         <div class="row">
           <div
             class="col-sm-6"
@@ -82,7 +58,6 @@
         </div>
       </div>
     </section>
-    <!-- End Portfolio Section -->
   </div>
 </template>
 
