@@ -85,7 +85,6 @@ export default {
           console.log(response.data);
         })
         .catch((error) => {
-          this.status = error.response.status;
           this.errors = error.response;
           console.log(error.response);
         });
