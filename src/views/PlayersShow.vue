@@ -88,11 +88,13 @@ export default {
           this.errors = error.response;
           console.log(error.response);
         });
-      document.querySelector("#follow-confirmation").showModal();
+      setTimeout(function () {
+        document.querySelector("#follow-confirmation").showModal();
+      }, 1500);
     },
     createFollowing: function () {
       axios
-        .post("/followings/" + this.$route.params.account_id, this.user)
+        .post("/followings/" + this.$route.params.account_id)
         .then((response) => {
           console.log(response.data);
         })
