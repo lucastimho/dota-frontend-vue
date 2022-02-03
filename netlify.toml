@@ -1,5 +1,7 @@
 [build]
+  command = "npm run build"
   functions = "lambda"
+  publish = "dist"
 [[redirects]]
   from = "/*"
   to = "/index.html"
