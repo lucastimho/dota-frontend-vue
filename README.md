@@ -36,7 +36,7 @@ bundle install
 rails server
 ```
 
-For more info, you can check out the GitHub page [here](https://github.com/lucastimho/dota-backend-rails)
+For more info, you can check out the GitHub page [here](https://github.com/lucastimho/dota-backend-rails).
 
 ### Type this command to install all packages in this application
 
