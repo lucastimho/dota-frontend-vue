@@ -42,6 +42,23 @@ npm run serve
 
 [Dotabase](https://dotabase.netlify.app)
 
+## Quick Demo
+
+### About Page
+
+Here is a quick story and and about page of how this project came to be.
+![About.png](/About.png)
+
+### Live Games
+
+This page will show some details about real time live matches being played.
+![LiveGames.png](/Live_games.png)
+
+### Index Page
+
+Here is an index list of the professional players for Dota 2
+![Index.png](/Index.png)
+
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
