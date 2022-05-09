@@ -86,7 +86,7 @@ export default {
   },
   methods: {
     indexPlayers: function () {
-      axios.get("/players").then((response) => {
+      axios.get("https://api.opendota.com/api/proPlayers").then((response) => {
         this.players = response.data;
         console.log("All Players", this.players);
       });
