@@ -38,6 +38,12 @@ npm install
 npm run serve
 ```
 
+### Open this link to see this application on the web
+
+```
+https://dotabase.netlify.app
+```
+
 ### Customize configuration
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
