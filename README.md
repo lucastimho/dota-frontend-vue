@@ -40,9 +40,7 @@ npm run serve
 
 ### Open this link to see this application on the web
 
-```
-https://dotabase.netlify.app
-```
+[Dotabase](https://dotabase.netlify.app)
 
 ### Customize configuration
 
