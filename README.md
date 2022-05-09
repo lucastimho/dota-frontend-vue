@@ -14,6 +14,12 @@ Here a list of resources I used to create this web application
 
 ## Getting Started
 
+### Clone the repo
+
+```
+git clone https://github.com/lucastimho/dota-frontend-vue.git
+```
+
 ### Type this command to install all packages in this application
 
 ```
