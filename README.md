@@ -26,6 +26,16 @@ git clone https://github.com/lucastimho/dota-frontend-vue.git
 git clone https://github.com/lucastimho/dota-backend-rails.git
 ```
 
+To run the backend API locally use these commands
+
+```
+bundle install
+```
+
+```
+rails server
+```
+
 ### Type this command to install all packages in this application
 
 ```
