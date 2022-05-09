@@ -12,7 +12,9 @@ Here a list of resources I used to create this web application
 - [BootstrapMade](https://bootstrapmade.com/)
 - [OpenDotaAPI](https://docs.opendota.com/)
 
-## Type this command to install all packages in this application
+## Getting Started
+
+### Type this command to install all packages in this application
 
 ```
 npm install
