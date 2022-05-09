@@ -20,6 +20,12 @@ Here a list of resources I used to create this web application
 git clone https://github.com/lucastimho/dota-frontend-vue.git
 ```
 
+### Clone the backend API
+
+```
+git clone https://github.com/lucastimho/dota-backend-rails.git
+```
+
 ### Type this command to install all packages in this application
 
 ```
